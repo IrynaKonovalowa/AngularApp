@@ -1,0 +1,27 @@
+<div [ngClass] = "{imgBill:true}"><img src="../assets/Bill.jpg">
+  <table>
+  <tr><td><span>Born</span></td>
+  <td>&nbsp;&nbsp;William Henry Gates III<br>&nbsp;&nbsp;October 28, 1955 (age 68)
+  <br>&nbsp;&nbsp;<a href="https://en.wikipedia.org/wiki/Seattle">Seattle, Washington, U.S.</a></td></tr>
+  <tr><td><span>Education</span></td>
+  <td>&nbsp;&nbsp;<a href="https://en.wikipedia.org/wiki/Harvard_University">Harvard University</a></td></tr>
+  <tr><td><span>Occupations</span></td>
+  <td>&nbsp;&nbsp;Businessman investor<br>&nbsp;&nbsp;philanthropist writer</td></tr>
+  <tr><td><span>Awards</span></td>
+  <td>&nbsp;&nbsp;Knight Commander of the Order<br>&nbsp;&nbsp;of the British Empire (2005)
+  <br>&nbsp;&nbsp;Padma Bhushan (2015)<br>&nbsp;&nbsp;Presid. Medal of Freedom (2016)<br>&nbsp;&nbsp;Hilal-e-Pakistan (2022)</td></tr>
+  <tr><td><span>Website</span></td>
+  <td>&nbsp;&nbsp;<a href="https://www.gatesnotes.com/">gatesnotes.com</a></td></tr>   
+  </table>
+  </div>    
+  <child-biography><h1>{{name}}</h1></child-biography>
+  <div>
+  <child-quotes></child-quotes>
+  <div [ngStyle] ="{'margin-right':'20px','margin-left':'20px'}"><input [ngStyle] ="{'border-radius': '7px'}" type="text" [(ngModel)]="billQuote" /></div>
+  <button [ngStyle] ="{'color':'blue', 'border': '2px solid blue', 'border-radius': '7px'}" (click)="addQuote(billQuote)">Add quote</button>
+  </div>
+  <div>
+  <child-links></child-links>
+  <div [ngStyle] ="{'margin-right':'20px', 'margin-left':'20px'}"><input [ngStyle] ="{'border-radius': '7px'}" type="text" [(ngModel)]="billLink" /></div>
+  <button [ngStyle] ="{'color':'blue', 'border': '2px solid blue', 'border-radius': '7px'}" (click)="addLink(billLink)">Add link</button>
+  </div>
