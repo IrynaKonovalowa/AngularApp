@@ -13,15 +13,51 @@
   <tr><td><span>Website</span></td>
   <td>&nbsp;&nbsp;<a href="https://www.gatesnotes.com/">gatesnotes.com</a></td></tr>   
   </table>
-  </div>    
-  <child-biography><h1>{{name}}</h1></child-biography>
-  <div>
-  <child-quotes></child-quotes>
-  <div [ngStyle] ="{'margin-right':'20px','margin-left':'20px'}"><input [ngStyle] ="{'border-radius': '7px'}" type="text" [(ngModel)]="billQuote" /></div>
-  <button [ngStyle] ="{'color':'blue', 'border': '2px solid blue', 'border-radius': '7px'}" (click)="addQuote(billQuote)">Add quote</button>
   </div>
   <div>
-  <child-links></child-links>
-  <div [ngStyle] ="{'margin-right':'20px', 'margin-left':'20px'}"><input [ngStyle] ="{'border-radius': '7px'}" type="text" [(ngModel)]="billLink" /></div>
-  <button [ngStyle] ="{'color':'blue', 'border': '2px solid blue', 'border-radius': '7px'}" (click)="addLink(billLink)">Add link</button>
+  <h1 bill >{{name}}</h1>
+ </div>
+  <br>
+  <div [ngClass] = "{buttons:true}">
+  <div>
+  <button buttn [ngStyle] ="{'color':'blue', 'border': '2px solid blue', 'border-radius': '7px'}" (click)="ChangeBiography()">Biography</button>
   </div>
+  <div>
+  <button buttn [ngStyle] ="{'color':'blue', 'border': '2px solid blue', 'border-radius': '7px'}" (click)="ChangeQuotes()">Quotes</button>
+  </div>
+  <div>
+  <button buttn [ngStyle] ="{'color':'blue', 'border': '2px solid blue', 'border-radius': '7px'}" (click)="ChangeLinks()">Links</button>
+  </div>
+  <div>
+  <button buttn [ngStyle] ="{'color':'blue', 'border': '2px solid blue', 'border-radius': '7px'}" (click)="ChangeExit()">Exit</button>
+  </div>
+</div>
+<br>
+  <div [ngSwitch] ="toChange">
+  <ng-template ngSwitchCase="Biography">
+  <div>
+  <child-biography></child-biography>
+  </div>
+  </ng-template>
+  <ng-template ngSwitchCase="Quotes">
+    <div>
+    <child-quotes></child-quotes>
+    <div [ngStyle] ="{'margin-right':'20px','margin-left':'30px', 'margin-bottom':'20px'}"><input [ngStyle] ="{'border-radius': '7px'}" type="text" [(ngModel)]="billQuote" /></div>
+    <button [ngStyle] ="{'color':'blue', 'border': '2px solid blue', 'border-radius': '7px'}" (click)="addQuote(billQuote)">Add quote</button>
+  </div>
+  </ng-template>
+	<ng-template ngSwitchCase="Links">
+    <div>
+    <child-links></child-links>
+    <div [ngStyle] ="{'margin-right':'20px', 'margin-left':'30px', 'margin-bottom':'20px'}"><input [ngStyle] ="{'border-radius': '7px'}" type="text" [(ngModel)]="billLink" /></div>
+    <button [ngStyle] ="{'color':'blue', 'border': '2px solid blue', 'border-radius': '7px'}" (click)="addLink(billLink)">Add link</button>
+    </div>
+  </ng-template>
+  <ng-template ngSwitchCase="Exit"></ng-template>
+  <ng-template ngSwitchDefault></ng-template>
+ </div>
+  
+  
+  
+  
+  

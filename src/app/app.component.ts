@@ -31,4 +31,19 @@ export class AppComponent {
     addLink(billLink){this.linkComponent.addLink(billLink)
         this.billLink = "";
     };
+
+    toChange: string = "";    
+
+    ChangeBiography(){
+        this.toChange = "Biography";          
+    };
+    ChangeQuotes(){
+        this.toChange = "Quotes";
+    };
+    ChangeLinks(){
+        this.toChange = "Links";
+    };
+    ChangeExit(){
+        this.toChange = "Exit";
+    };
 };
